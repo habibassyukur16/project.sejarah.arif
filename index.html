@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sisingamangaraja XII - Perang Batak</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5efe3;
+    color:#2b2118;
+    line-height:1.7;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:#20150e;
+    padding:15px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#e8c56a;
+    font-weight:bold;
+    font-size:18px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:18px;
+    font-size:13px;
+}
+
+nav a:hover{
+    color:#e8c56a;
+}
+
+/* HALAMAN MUKA */
+.hero{
+    min-height:100vh;
+    padding:120px 8% 70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+    color:white;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(25,15,8,.95),
+        rgba(25,15,8,.70)
+    ),
+    url("https://upload.wikimedia.org/wikipedia/commons/1/18/Sisingamangaraja_XII.jpg")
+    center/cover;
+}
+
+.hero-text{
+    max-width:650px;
+}
+
+.hero small{
+    color:#e8c56a;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-size:clamp(44px,7vw,82px);
+    line-height:1.02;
+    color:#f1d27b;
+    margin:15px 0;
+}
+
+.hero h2{
+    font-weight:normal;
+    font-size:25px;
+    margin-bottom:18px;
+}
+
+.hero p{
+    color:#eee;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:28px;
+    padding:12px 22px;
+    background:#d2aa55;
+    color:#20150d;
+    text-decoration:none;
+    border-radius:6px;
+    font-weight:bold;
+}
+
+/* FOTO TOKOH */
+.portrait{
+    text-align:center;
+}
+
+.portrait img{
+    width:340px;
+    height:390px;
+    object-fit:cover;
+    object-position:center;
+    border:6px solid #e8c56a;
+    border-radius:18px;
+    box-shadow:0 18px 50px #0009;
+    background:white;
+    display:block;
+}
+
+.portrait p{
+    color:#e8c56a;
+    margin-top:10px;
+    font-size:13px;
+}
+
+/* SECTION */
+section{
+    padding:85px 8%;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:42px;
+}
+
+.title span{
+    color:#9a7024;
+    letter-spacing:3px;
+    font-size:13px;
+}
+
+.title h2{
+    font-size:38px;
+}
+
+/* CARD */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    padding:28px;
+    border-radius:12px;
+    box-shadow:0 7px 22px #00000012;
+    border-left:5px solid #c69a42;
+}
+
+.card h3{
+    color:#7b581c;
+    margin-bottom:10px;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+/* TIMELINE */
+.timeline{
+    max-width:850px;
+    margin:auto;
+    border-left:3px solid #c69a42;
+    padding-left:28px;
+}
+
+.item{
+    background:white;
+    padding:22px;
+    margin-bottom:25px;
+    border-radius:10px;
+    position:relative;
+    box-shadow:0 5px 18px #00000010;
+}
+
+.item:before{
+    content:"";
+    position:absolute;
+    width:13px;
+    height:13px;
+    border-radius:50%;
+    background:#c69a42;
+    left:-36px;
+    top:28px;
+}
+
+/* QUOTE */
+.quote{
+    padding:70px 10%;
+    text-align:center;
+    background:#2b1c12;
+    color:white;
+}
+
+.quote h2{
+    color:#e8c56a;
+    margin-bottom:12px;
+}
+
+/* SUMBER */
+.sources{
+    background:#e9dfcd;
+}
+
+.source{
+    background:white;
+    padding:20px;
+    margin:14px 0;
+    border-radius:8px;
+}
+
+.source a{
+    color:#7d591a;
+    word-break:break-word;
+}
+
+/* FOOTER */
+footer{
+    background:#1b120d;
+    color:#bbb;
+    text-align:center;
+    padding:28px;
+}
+
+footer strong{
+    color:#e8c56a;
+}
+
+/* HP */
+@media(max-width:800px){
+
+    nav{
+        padding:15px 5%;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding-top:125px;
+    }
+
+    .portrait img{
+        width:250px;
+        height:300px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:65px 6%;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+
+    <div class="logo">
+        SISINGAMANGARAJA XII
+    </div>
+
+    <div>
+        <a href="#perlawanan">Perlawanan</a>
+        <a href="#tokoh">Tokoh</a>
+        <a href="#lokasi">Lokasi</a>
+        <a href="#latar">Latar Belakang</a>
+        <a href="#proses">Proses</a>
+        <a href="#dampak">Dampak</a>
+        <a href="#sumber">Jurnal</a>
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HALAMAN MUKA
+========================= -->
+
+<header class="hero">
+
+    <div class="hero-text">
+
+        <small>
+            Sejarah Perjuangan Indonesia
+        </small>
+
+        <h1>
+            Sisingamangaraja XII
+        </h1>
+
+        <h2>
+            Pejuang dari Tanah Batak
+        </h2>
+
+        <p>
+            Mengenal perjuangan Sisingamangaraja XII
+            dalam memimpin rakyat Batak melawan
+            kolonialisme Belanda dalam Perang Batak.
+        </p>
+
+        <a href="#perlawanan" class="btn">
+            Pelajari Perjuangannya ↓
+        </a>
+
+    </div>
+
+
+    <!-- FOTO / WAJAH SISINGAMANGARAJA XII -->
+
+    <div class="portrait">
+
+        <img
+        src="Tokoh.jpeg"
+        alt="Potret Sisingamangaraja XII">
+
+        <p>
+            Potret Sisingamangaraja XII
+        </p>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     1. NAMA PERLAWANAN
+========================= -->
+
+<section id="perlawanan">
+
+    <div class="title">
+
+        <span>
+            01 — NAMA
+        </span>
+
+        <h2>
+            Nama Perlawanan
+        </h2>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>
+            Perang Batak
+        </h3>
+
+        <p>
+            Perlawanan Sisingamangaraja XII bersama
+            rakyat Batak terhadap pemerintah kolonial
+            Belanda dikenal sebagai
+            <b>Perang Batak</b> atau Perang Tapanuli.
+        </p>
+
+        <p>
+            Perlawanan berlangsung dalam periode panjang,
+            terutama sejak tahun
+            <b>1878 hingga 1907</b>.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     2. TOKOH
+========================= -->
+
+<section id="tokoh">
+
+    <div class="title">
+
+        <span>
+            02 — TOKOH
+        </span>
+
+        <h2>
+            Tokoh Perlawanan
+        </h2>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>
+                Sisingamangaraja XII
+            </h3>
+
+            <p>
+                Patuan Bosar Ompu Pulo Batu atau
+                Sisingamangaraja XII merupakan pemimpin
+                masyarakat Batak dan tokoh utama
+                perlawanan terhadap Belanda.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Guru Somalaing Pardede
+            </h3>
+
+            <p>
+                Tokoh yang berkaitan dengan gerakan
+                Parmalim serta perjuangan mempertahankan
+                adat dan kepercayaan masyarakat Batak.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Panglima Sarbut Tampubolon
+            </h3>
+
+            <p>
+                Salah satu panglima yang membantu
+                perjuangan pasukan Sisingamangaraja XII.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Panglima Amandopang Manullang
+            </h3>
+
+            <p>
+                Salah satu tokoh yang ikut terlibat
+                dalam perjuangan rakyat Batak.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     3. LOKASI
+========================= -->
+
+<section id="lokasi">
+
+    <div class="title">
+
+        <span>
+            03 — LOKASI
+        </span>
+
+        <h2>
+            Lokasi Perlawanan
+        </h2>
+
+    </div>
+
+
+    <div class="card">
+
+        <p>
+            Perlawanan berlangsung di wilayah
+            Tanah Batak dan Tapanuli,
+            Sumatera Utara.
+        </p>
+
+        <br>
+
+        <ul>
+
+            <li>Bakkara</li>
+
+            <li>Balige</li>
+
+            <li>Uluan</li>
+
+            <li>Silindung</li>
+
+            <li>Toba</li>
+
+            <li>Humbang</li>
+
+            <li>Pakpak / Dairi</li>
+
+            <li>Wilayah sekitar Danau Toba</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     4. LATAR BELAKANG
+========================= -->
+
+<section id="latar">
+
+    <div class="title">
+
+        <span>
+            04 — LATAR BELAKANG
+        </span>
+
+        <h2>
+            Latar Belakang & Faktor
+        </h2>
+
+    </div>
+
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>
+                Perluasan Kekuasaan Belanda
+            </h3>
+
+            <p>
+                Belanda berusaha memperluas kekuasaan
+                dan pengaruh kolonial ke wilayah
+                Tanah Batak.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Ancaman terhadap Kedaulatan
+            </h3>
+
+            <p>
+                Masuknya pemerintahan kolonial mengancam
+                kebebasan masyarakat dan sistem kekuasaan
+                tradisional Batak.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Penyebaran Agama
+            </h3>
+
+            <p>
+                Perkembangan misionaris menimbulkan
+                kekhawatiran terhadap kepercayaan
+                dan tradisi masyarakat Batak.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Mempertahankan Adat
+            </h3>
+
+            <p>
+                Perlawanan juga berkaitan dengan usaha
+                mempertahankan adat, budaya, dan
+                kepercayaan masyarakat Batak.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     5. PROSES PERLAWANAN
+========================= -->
+
+<section id="proses">
+
+    <div class="title">
+
+        <span>
+            05 — PROSES
+        </span>
+
+        <h2>
+            Proses Perlawanan
+        </h2>
+
+    </div>
+
+
+    <div class="timeline">
+
+
+        <div class="item">
+
+            <h3>
+                1878 — Awal Perang
+            </h3>
+
+            <p>
+                Pasukan Belanda memasuki wilayah Batak.
+                Konflik berkembang menjadi peperangan
+                melawan pasukan Sisingamangaraja XII.
+            </p>
+
+        </div>
+
+
+        <div class="item">
+
+            <h3>
+                1878 — Bahal Batu
+            </h3>
+
+            <p>
+                Pasukan Sisingamangaraja XII melakukan
+                perlawanan terhadap pos Belanda di
+                Bahal Batu dan wilayah sekitarnya.
+            </p>
+
+        </div>
+
+
+        <div class="item">
+
+            <h3>
+                1883–1884 — Perlawanan Berlanjut
+            </h3>
+
+            <p>
+                Perlawanan berlangsung di berbagai
+                wilayah seperti Uluan, Balige,
+                dan daerah sekitar Toba.
+            </p>
+
+        </div>
+
+
+        <div class="item">
+
+            <h3>
+                1904 — Belanda Memperkuat Serangan
+            </h3>
+
+            <p>
+                Belanda meningkatkan operasi militernya
+                untuk melemahkan perlawanan rakyat Batak.
+            </p>
+
+        </div>
+
+
+        <div class="item">
+
+            <h3>
+                1907 — Akhir Perlawanan
+            </h3>
+
+            <p>
+                Belanda mengejar pasukan Sisingamangaraja XII
+                hingga wilayah Dairi.
+                Pada 17 Juni 1907,
+                Sisingamangaraja XII gugur
+                bersama sejumlah pengikutnya.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<div class="quote">
+
+    <h2>
+        Warisan Perjuangan
+    </h2>
+
+    <p>
+        Perjuangan Sisingamangaraja XII menjadi
+        salah satu bagian penting dari sejarah
+        perlawanan rakyat Indonesia terhadap kolonialisme.
+    </p>
+
+</div>
+
+
+<!-- =========================
+     6. DAMPAK
+========================= -->
+
+<section id="dampak">
+
+    <div class="title">
+
+        <span>
+            06 — DAMPAK
+        </span>
+
+        <h2>
+            Dampak Perlawanan
+        </h2>
+
+    </div>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <h3>
+                Berakhirnya Perlawanan Utama
+            </h3>
+
+            <p>
+                Setelah Sisingamangaraja XII gugur
+                pada 1907, kekuatan utama perlawanan
+                Batak semakin melemah.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Penguasaan Belanda
+            </h3>
+
+            <p>
+                Belanda semakin memperkuat penguasaannya
+                di wilayah Tapanuli dan Tanah Batak.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Korban dan Kerugian
+            </h3>
+
+            <p>
+                Peperangan menimbulkan korban jiwa
+                dan kerusakan di berbagai wilayah konflik.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                Warisan Kepahlawanan
+            </h3>
+
+            <p>
+                Sisingamangaraja XII dikenang sebagai
+                simbol keberanian dan perjuangan melawan
+                penjajahan serta ditetapkan sebagai
+                Pahlawan Nasional.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     7. SUMBER JURNAL
+========================= -->
+
+<section id="sumber" class="sources">
+
+    <div class="title">
+
+        <span>
+            07 — SUMBER
+        </span>
+
+        <h2>
+            Sumber Jurnal
+        </h2>
+
+    </div>
+
+
+    <div class="source">
+
+        <h3>
+            Pertumbuhan dan Perkembangan Parmalim
+            di Sumatera Tahun 1885–Sekarang
+        </h3>
+
+        <p>
+            Membahas perkembangan Parmalim dan konteks
+            sejarah masyarakat Batak pada masa kolonial.
+        </p>
+
+        <br>
+
+        <a
+        href="https://download.garuda.kemdikbud.go.id/article.php?article=810698"
+        target="_blank">
+
+            Buka sumber jurnal →
+
+        </a>
+
+    </div>
+
+
+    <div class="source">
+
+        <h3>
+            Pusat Aktivitas Ritual Ugamo Malim
+            di Huta Tinggi Laguboti
+        </h3>
+
+        <p>
+            Membahas Ugamo Malim, Sisingamangaraja XII,
+            dan konteks sosial-keagamaan masyarakat Batak.
+        </p>
+
+        <br>
+
+        <a
+        href="https://ojs.uma.ac.id/index.php/jppuma/article/download/456/887"
+        target="_blank">
+
+            Buka sumber jurnal →
+
+        </a>
+
+    </div>
+
+
+    <div class="source">
+
+        <h3>
+            Analisis Struktur Pertunjukan Opera Batak
+            Sisingamangaraja XII
+        </h3>
+
+        <p>
+            Memuat pembahasan mengenai tokoh dan
+            kisah perjuangan Sisingamangaraja XII.
+        </p>
+
+        <br>
+
+        <a
+        href="https://download.garuda.kemdikbud.go.id/article.php?article=1216576"
+        target="_blank">
+
+            Buka sumber jurnal →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        Website Sejarah —
+        <strong>Sisingamangaraja XII</strong>
+    </p>
+
+    <p>
+        Perang Batak • 1878–1907
+    </p>
+
+</footer>
+
+</body>
+</html>
